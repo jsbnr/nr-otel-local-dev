@@ -18,8 +18,7 @@ Want to develop your own OpenTelemetry components? This guide explains how to ge
 You probably already have GO installed already, if not install following [these instructions](https://go.dev/doc/install) or via [brew](https://formulae.brew.sh/formula/go).
 
 ```console
-foo@bar:~$ whoami
-go version
+$ go version
 go version go1.19.2 darwin/arm64
 ```
 
