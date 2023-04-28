@@ -187,8 +187,9 @@ cd otel-generator-demo
 Edit the file `loggen/main.py` and change the string on the last line to something of your own you will recognise (or you can leave it as it is `PASTE_JSON_HERE`).
 
 #### Run the app
-Run the app using docker-compose:
+Build and run the app using docker-compose:
 ```
+docker-compose build
 docker-compose up -d
 ```
 
