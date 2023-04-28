@@ -1,6 +1,6 @@
 # Local development setup guide
 
-Want to develop your own OpenTelemetry components? This guide explains how to get started building your own [custom instance of the OpenTelemetry collector]()https://opentelemetry.io/docs/collector/custom-collector/, run it locally and drive traffic to it with a test app allowing you to get on with develping your custom components. 
+Want to develop your own OpenTelemetry modules? This guide explains how to get started building your own [custom instance of the OpenTelemetry collector]()https://opentelemetry.io/docs/collector/custom-collector/, run it locally and drive traffic to it with a test app allowing you to get on with develping your custom modules. 
 
 > These instructions are intended for Mac users, adjust accordingly for other systems.
 
@@ -53,3 +53,52 @@ ocb version dev
 > If you install using a release you'll need to rename and make the file executable as well as placing it in your path. More information [here](https://github.com/open-telemetry/opentelemetry-collector/tree/main/cmd/builder)
 
 
+## Step 3: Configure, build and run a collector
+In this step we'll build a new version of your custom collector and get it running. 
+
+The `builder` tool takes a yaml configuration defining what modules should be included in your collector. Here we'll configure a really basic collector with just a few modules to get things running. Create a 
+
+```yaml[otelcol-builder.yaml]
+cat > ./otelcol-builder.yaml <<EOF
+dist:
+  name: otelcol-dev
+  description: Basic OTel Collector distribution for Developers
+  output_path: ./otelcol-dev
+  otelcol_version: 0.75.0
+
+exporters:
+  - gomod:
+      go.opentelemetry.io/collector/exporter/loggingexporter v0.75.0
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/exporter/jaegerexporter v0.75.0
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter v0.75.0
+  - gomod: 
+      github.com/open-telemetry/opentelemetry-collector-contrib/exporter/zipkinexporter v0.75.0
+  - gomod:
+      go.opentelemetry.io/collector/exporter/otlpexporter v0.75.0
+
+extensions:
+  - gomod:
+      go.opentelemetry.io/collector/extension/zpagesextension v0.75.0
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension v0.75.0
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension v0.75.0
+
+processors:
+  - gomod:
+      go.opentelemetry.io/collector/processor/batchprocessor v0.75.0
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor latest
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor latest
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor latest
+  - gomod:
+      github.com/open-telemetry/opentelemetry-collector-contrib/processor/logstransformprocessor latest
+receivers:
+  - gomod:
+      go.opentelemetry.io/collector/receiver/otlpreceiver v0.75.0
+EOF
+```
