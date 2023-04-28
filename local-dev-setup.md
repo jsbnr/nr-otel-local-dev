@@ -43,7 +43,7 @@ export PATH=$PATH:$GOROOT/bin
 
 Check the version:
 
-```console
+```bash
 $ builder version
 ocb version dev
 ```
