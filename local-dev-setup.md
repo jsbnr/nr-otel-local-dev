@@ -58,8 +58,8 @@ In this step we'll build a new version of your custom collector and get it runni
 
 The `builder` tool takes a yaml configuration defining what modules should be included in your collector. Here we'll configure a really basic collector with just a few modules to get things running. Create a 
 
-```yaml[otelcol-builder.yaml]
-cat > ./otelcol-builder.yaml <<EOF
+otelcol-builder.yaml
+```yaml
 dist:
   name: otelcol-dev
   description: Basic OTel Collector distribution for Developers
@@ -100,5 +100,4 @@ processors:
 receivers:
   - gomod:
       go.opentelemetry.io/collector/receiver/otlpreceiver v0.75.0
-EOF
 ```
