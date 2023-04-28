@@ -41,11 +41,15 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 ```
 
-Check the version:
+Check it works by checking the version, in this case we have the dev version installed:
 
-```bash
+```console
 $ builder version
 ocb version dev
 ```
+
+> For some reason the tool is sometimes named `ocb` instead of `builder`. Just use `builder ` wheever you see in `ocb` in the docs. We'll use `builder` in the rest of this guide.
+
+> If you install using a release you'll need to rename and make the file executable as well as placing it in your path. More information [here](https://github.com/open-telemetry/opentelemetry-collector/tree/main/cmd/builder)
 
 
