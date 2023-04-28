@@ -175,6 +175,7 @@ To run this configuration using your custom distribution run the following (CTRL
 ## Step 5: Install and run the test application
 We'll use a small [test application](https://github.com/dpacheconr/otel-generator-demo) to generate some traffic to the collector. You will need [docker](https://www.docker.com/products/docker-desktop/) installed and running to run the app.
 
+#### Clone the app
 In another terminal window clone the demo app and switch to the directory:
 
 ```
@@ -182,10 +183,10 @@ git clone https://github.com/dpacheconr/otel-generator-demo.git
 cd otel-generator-demo
 ```
 
-Configure the demo app:
-
+#### Configure the demo app
 Edit the file `loggen/main.py` and change the string on the last line to something of your own you will recognise (or you can leave it as it is `PASTE_JSON_HERE`).
 
+#### Run the app
 Run the app using docker-compose:
 ```
 docker-compose up -d
