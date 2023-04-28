@@ -199,6 +199,6 @@ docker-compose up -d
 
 
 ## Step 6:  Confirm its all working
-Once the application has started up you should see some data being logged to screen on the collector window. A short while later you should also start to see logs appearing in the Logs section of New Relic. If you're having trouble finding the logs in New Relic add this filter to the filter bar: `"otelcol.test":"loggen"`
+Once the application has started up you should see some data being logged to screen on the collector window. A short while later you should also start to see logs appearing in the Logs section of New Relic. If you're having trouble finding the logs in New Relic add the string you added to main.py to the filter or add this filter to the filter bar: `"otelcol.test":"loggen"`
 
 > The data is flowing from the application running in docker to your custom collector, passing through the collector pipeline nd then being sent to the New Relic otlp endpoint.
