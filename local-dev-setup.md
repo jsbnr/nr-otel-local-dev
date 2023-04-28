@@ -15,11 +15,37 @@ Want to develop your own OpenTelemetry components? This guide explains how to ge
 
 
 ## Step 1: GO Installation
-You probably already have GO installed already, if not install following [these instructions](https://go.dev/doc/install) or via [brew](https://formulae.brew.sh/formula/go).
+You probably already have GO installed already, if not install following [these instructions](https://go.dev/doc/install) or via [brew](https://formulae.brew.sh/formula/go). Check your version like this (anythign recent should do):
 
 ```console
 $ go version
 go version go1.19.2 darwin/arm64
+```
+
+## Step 2: Install the OpenTelemetry Collector Builder (ocb) tool
+This [helper tool](https://github.com/open-telemetry/opentelemetry-collector/tree/main/cmd/builder) builds a custom OpenTelemetry Collector binary based on a given configuration. We'll use this to package up our collector to run.
+
+You can install the OCB tool using the installer or by downloading a [pre-built release](https://github.com/open-telemetry/opentelemetry-collector-releases/releases).
+
+To install using the installer run:
+
+```
+GO111MODULE=on go install go.opentelemetry.io/collector/cmd/builder@latest
+```
+
+This installs a binary `builder` in `$HOME/go/bin/`. To easily use this add it to your path:
+
+```bash
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+```
+
+Check the version:
+
+```console
+$ builder version
+ocb version dev
 ```
 
 
