@@ -56,9 +56,9 @@ ocb version dev
 ## Step 3: Configure, build and run a collector
 In this step we'll build a new version of your custom collector and get it running. 
 
-The `builder` tool takes a yaml configuration defining what modules should be included in your collector. Here we'll configure a really basic collector with just a few modules to get things running. Create a 
+The `builder` tool takes a yaml configuration defining what modules should be included in your collector. Here we'll configure a really basic collector with just a few modules to get things running. Create a file called `otelcol-builder.yaml` and paste in the following configuration:
 
-otelcol-builder.yaml
+*otelcol-builder.yaml*
 ```yaml
 dist:
   name: otelcol-dev
