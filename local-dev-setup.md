@@ -194,7 +194,7 @@ docker-compose up -d
 ```
 
 > You can shutdown the app with:
-> ````
+> ```
 > docker-compose down
 > ```
 
