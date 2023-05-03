@@ -1,6 +1,6 @@
 # Local development setup guide
 
-Want to develop your own OpenTelemetry modules? This guide explains how to get started building your own [custom instance of the OpenTelemetry collector]()https://opentelemetry.io/docs/collector/custom-collector/, run it locally and drive traffic to it with a test app allowing you to get on with develping your custom modules. 
+Want to develop your own OpenTelemetry modules? This guide explains how to get started building your own [custom instance of the OpenTelemetry collector](https://opentelemetry.io/docs/collector/custom-collector/), run it locally and drive traffic to it with a test app allowing you to get on with develping your custom modules. 
 
 > These instructions are intended for Mac users, adjust accordingly for other systems.
 
