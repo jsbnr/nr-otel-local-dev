@@ -26,7 +26,7 @@ go version go1.19.2 darwin/arm64
 ## Step 2: Install the OpenTelemetry Collector Builder (ocb) tool
 This [helper tool](https://github.com/open-telemetry/opentelemetry-collector/tree/main/cmd/builder) builds a custom OpenTelemetry Collector binary based on a given configuration. We'll use this to package up our collector to run.
 
-You can install the OCB tool using the installer or by downloading a [pre-built release](https://github.com/open-telemetry/opentelemetry-collector-releases/releases).
+You can install the OCB tool using the installer or by downloading a [pre-built release](https://github.com/open-telemetry/opentelemetry-collector/releases/).
 
 To install using the installer run:
 
